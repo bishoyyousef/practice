@@ -1,0 +1,97 @@
+.detail-container {
+  @apply h-full bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden flex flex-col;
+}
+
+/* Empty State */
+.empty-state-wrapper {
+  @apply flex-1 flex flex-col items-center justify-center text-gray-500 p-8;
+}
+.empty-state-icon {
+  @apply h-16 w-16 mb-4 text-gray-300;
+}
+.empty-state-title {
+  @apply text-xl font-semibold text-gray-700 mb-2;
+}
+.empty-state-subtitle {
+  @apply text-sm text-center;
+}
+
+/* Detail View */
+.detail-view-wrapper {
+  @apply flex-1 overflow-y-auto;
+}
+.header-cover {
+  @apply h-32 bg-blue-500 relative;
+}
+.content-wrapper {
+  @apply px-8 pb-8 relative;
+}
+
+/* Avatar row */
+.avatar-row {
+  @apply flex justify-between items-end -mt-12 mb-6;
+}
+.avatar-img-large {
+  @apply w-24 h-24 rounded-full border-4 border-white shadow-md object-cover bg-white;
+}
+.actions-wrapper {
+  @apply flex space-x-3 pb-2;
+}
+
+.btn-base {
+  @apply px-4 py-2 flex items-center space-x-2 rounded-lg font-medium transition-colors border;
+}
+.btn-favorite-active {
+  @apply bg-red-50 text-red-600 border-red-200 hover:bg-red-100;
+}
+.btn-favorite-inactive {
+  @apply bg-white text-gray-700 border-gray-300 hover:bg-gray-50;
+}
+.btn-icon {
+  @apply h-5 w-5;
+}
+
+.btn-clear {
+  @apply px-4 py-2 bg-white text-gray-700 border border-gray-300 rounded-lg font-medium hover:bg-gray-50 transition-colors;
+}
+
+/* User Info */
+.info-section {
+  @apply mb-8;
+}
+.user-name {
+  @apply text-3xl font-bold text-gray-900 mb-1;
+}
+.user-email {
+  @apply text-gray-500 text-lg mb-4;
+}
+.meta-row-large {
+  @apply flex items-center space-x-4 mb-6;
+}
+.role-badge-large {
+  @apply px-3 py-1 rounded-full font-semibold text-sm uppercase tracking-wider;
+}
+.role-admin {
+  @apply bg-purple-100 text-purple-700;
+}
+.role-editor {
+  @apply bg-blue-100 text-blue-700;
+}
+.role-viewer {
+  @apply bg-gray-100 text-gray-700;
+}
+
+.joined-date-wrapper {
+  @apply flex items-center text-sm text-gray-600;
+}
+.date-icon {
+  @apply h-5 w-5 mr-1.5 text-gray-400;
+}
+
+/* Bio */
+.bio-title {
+  @apply text-lg font-semibold text-gray-900 mb-2;
+}
+.bio-content {
+  @apply text-gray-700 leading-relaxed bg-gray-50 p-4 rounded-xl border border-gray-100;
+}

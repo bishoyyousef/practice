@@ -1,0 +1,77 @@
+<div class="detail-container">
+  <!-- Empty State -->
+  <div *ngIf="!user" class="empty-state-wrapper">
+    <svg xmlns="http://www.w3.org/2000/svg" class="empty-state-icon" fill="none" viewBox="0 0 24 24"
+      stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+        d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+    </svg>
+    <h2 class="empty-state-title">No user selected</h2>
+    <p class="empty-state-subtitle">Select a team member from the list to view their details.</p>
+  </div>
+
+  <!-- Detail View -->
+  <div *ngIf="user" class="detail-view-wrapper">
+    <!-- Header/Cover -->
+    <div class="header-cover"></div>
+
+    <div class="content-wrapper">
+      <!-- Avatar row -->
+      <div class="avatar-row">
+        <img [src]="user.avatarUrl" [alt]="user.name" class="avatar-img-large" />
+
+        <div class="actions-wrapper">
+          <button (click)="onToggleFavorite()"
+            class="btn-base" [ngClass]="{
+              'btn-favorite-active': isFavorite,
+              'btn-favorite-inactive': !isFavorite
+            }">
+            <svg xmlns="http://www.w3.org/2000/svg" class="btn-icon" [attr.fill]="isFavorite ? 'currentColor' : 'none'"
+              viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+            </svg>
+            <span>{{ isFavorite ? 'Favorited' : 'Favorite' }}</span>
+          </button>
+
+          <button (click)="onClearSelection()" class="btn-clear">
+            Clear selection
+          </button>
+        </div>
+      </div>
+
+      <!-- User Info -->
+      <div class="info-section">
+        <h1 class="user-name">{{ user.name }}</h1>
+        <p class="user-email">{{ user.email }}</p>
+
+        <div class="meta-row-large">
+          <span *ngIf="user.role" class="role-badge-large"
+            [ngClass]="{
+              'role-admin': user.role === 'admin',
+              'role-editor': user.role === 'editor',
+              'role-viewer': user.role === 'viewer'
+            }">
+            {{ user.role }}
+          </span>
+          <div *ngIf="user.joinedAt" class="joined-date-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" class="date-icon" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2-2v12a2 2 0 002 2z" />
+            </svg>
+            Joined {{ getFormattedDate() }}
+          </div>
+        </div>
+      </div>
+
+      <!-- Bio -->
+      <div *ngIf="user.bio">
+        <h3 class="bio-title">About</h3>
+        <p class="bio-content">
+          {{ user.bio }}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
