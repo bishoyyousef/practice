@@ -54,6 +54,9 @@
 .btn-clear {
   @apply px-4 py-2 bg-white text-gray-700 border border-gray-300 rounded-lg font-medium hover:bg-gray-50 transition-colors;
 }
+.btn-full {
+  @apply px-4 py-2 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition-colors shadow-sm text-center text-sm flex items-center justify-center;
+}
 
 /* User Info */
 .info-section {
@@ -76,6 +79,9 @@
 }
 .role-editor {
   @apply bg-blue-100 text-blue-700;
+}
+.role-user {
+  @apply bg-green-100 text-green-700;
 }
 .role-viewer {
   @apply bg-gray-100 text-gray-700;

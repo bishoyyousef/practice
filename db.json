@@ -1,0 +1,88 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Karim Essam",
+      "email": "karim@company.com",
+      "role": "admin",
+      "status": "online",
+      "joinedAt": "2023-04-15",
+      "bio": "Senior backend dev who builds payment systems and architecture maps.",
+      "skills": [
+        "angular"
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Ahmed",
+      "email": "ahmed@example.com",
+      "role": "user",
+      "status": "away",
+      "joinedAt": "2024-01-10",
+      "bio": "Frontend enthusiast loving Tailwind and modern reactive UI workflows."
+    },
+    {
+      "id": "3",
+      "name": "Sara",
+      "email": "sara@example.com",
+      "role": "user",
+      "status": "offline",
+      "joinedAt": "2023-11-22",
+      "bio": "QA engineer dedicated to breaking code and ensuring flawless deployments."
+    },
+    {
+      "id": "4",
+      "name": "Mohamed",
+      "email": "mohamed@example.com",
+      "role": "admin",
+      "status": "online",
+      "joinedAt": "2025-05-01",
+      "bio": "DevOps wizard automating cloud clusters and continuous integration pipelines."
+    },
+    {
+      "id": "5",
+      "name": "Nour",
+      "email": "nour@example.com",
+      "role": "user",
+      "status": "away",
+      "joinedAt": "2024-08-19",
+      "bio": "Product manager bridge between clients and engineering sprints."
+    },
+    {
+      "name": "bishoy",
+      "email": "bishoy@ex.com",
+      "role": "user",
+      "status": "online",
+      "bio": "Registered new member. Age: 18",
+      "joinedAt": "2026-05-25",
+      "id": "K1cubQsrnUw"
+    }
+  ],
+  "takenEmails": [
+    {
+      "id": "1",
+      "email": "karim@company.com"
+    },
+    {
+      "id": "2",
+      "email": "ahmed@example.com"
+    },
+    {
+      "id": "3",
+      "email": "sara@example.com"
+    },
+    {
+      "id": "4",
+      "email": "mohamed@example.com"
+    },
+    {
+      "id": "5",
+      "email": "nour@example.com"
+    },
+    {
+      "email": "bishoy@ex.com",
+      "id": "ZMa0PH8Ef4E"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

@@ -18,7 +18,10 @@
     <div class="content-wrapper">
       <!-- Avatar row -->
       <div class="avatar-row">
-        <img [src]="user.avatarUrl" [alt]="user.name" class="avatar-img-large" />
+        <img *ngIf="user.avatarUrl" [src]="user.avatarUrl" [alt]="user.name" class="avatar-img-large" />
+        <div *ngIf="!user.avatarUrl" class="w-24 h-24 rounded-full border-4 border-white shadow-md flex items-center justify-center bg-blue-50 text-blue-600 font-extrabold text-2xl uppercase select-none">
+          {{ user.name.slice(0, 2) }}
+        </div>
 
         <div class="actions-wrapper">
           <button (click)="onToggleFavorite()"
@@ -33,6 +36,10 @@
             </svg>
             <span>{{ isFavorite ? 'Favorited' : 'Favorite' }}</span>
           </button>
+
+          <a [routerLink]="['/users', user.id]" class="btn-full">
+            Full Profile
+          </a>
 
           <button (click)="onClearSelection()" class="btn-clear">
             Clear selection
@@ -50,6 +57,7 @@
             [ngClass]="{
               'role-admin': user.role === 'admin',
               'role-editor': user.role === 'editor',
+              'role-user': user.role === 'user',
               'role-viewer': user.role === 'viewer'
             }">
             {{ user.role }}
